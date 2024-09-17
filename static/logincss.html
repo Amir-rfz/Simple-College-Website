@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      text-align: center;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding-top: 50px;
+      height: 100vh;
+    }
+    .login-container {
+      background-color: #81daf8;
+      padding: 50px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 320px;
+    }
+    .login-title {
+      color: white;
+      margin-bottom: 50px;
+    }
+    .input-field {
+      width: calc(100% - 20px);
+      padding: 10px;
+      margin-bottom: 30px;
+      border-radius: 5px;
+      border: none;
+    }
+    .submit-btn {
+      width: calc(80% - 20px);
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      background-color: white;
+      cursor: pointer;
+    }
+    .submit-btn:hover {
+      background-color: #e0e0e0;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h1 class="login-title">UTMS Login</h1>
+    <form action="/" method="post">
+      <input class="input-field" name="username" type="text" placeholder="Username">
+      <input class="input-field" name="password" type="password" placeholder="Password">
+      <input type="submit" class="submit-btn" value="Login">
+    </form>
+  </div>
+</body>
+</html>

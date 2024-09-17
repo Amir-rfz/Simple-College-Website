@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Set Profile</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #81daf8;
+    }
+    
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    table {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+    
+    td {
+      padding: 10px;
+    }
+    
+    input[type="text"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      background-color: #81daf8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    input[type="submit"]:hover {
+      background-color: #6ccbe5;
+    }
+
+    input[type="file"] {
+      display: none;
+    }
+    
+    label {
+      padding: 8px;
+      background-color: #81daf8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      font-size: 14px;
+    }
+    
+    label:hover {
+      background-color: #6ccbe5;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Change profile</h1>
+  <form action="/changeProfile" method="post" enctype="multipart/form-data">
+    <table>
+      <tr>
+        <td>Profile Image:</td>
+        <td>
+          <label for="file">Choose file</label>
+          <input type="file" id="file" name="file" onchange="showFileName()">
+          <span id="file-name"></span>
+        </td>
+      </tr>
+    </table>
+    <input type="submit" value="change">
+  </form>
+  <h1>Delete profile</h1>
+  <form action="/deleteProfile" method="post">
+    <input type="submit" value="delete profile">
+  </form>
+  <script>
+    function showFileName() {
+      var fileInput = document.getElementById('file');
+      var fileNameSpan = document.getElementById('file-name');
+
+      fileNameSpan.textContent = "File chosen: " + fileInput.files[0].name;
+    }
+  </script>
+</body>
+</html>

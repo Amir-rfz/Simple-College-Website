@@ -1,0 +1,37 @@
+POST login ? password UT_account id 0
+POST course_offer ? course_id 1 professor_id 810100001 capacity 70 time Sunday:3-5 exam_date 1403/4/4 class_number 2
+POST course_offer ? course_id 1 professor_id 810100001 capacity 70 time Sunday:4-9 exam_date 1403/4/4 class_number 1
+POST course_offer ? course_id 2 professor_id 810100002 capacity 70 time Sunday:13-15 exam_date 1403/4/10 class_number 4
+POST course_offer ? course_id 2 professor_id 810100001 capacity 100 time Sunday:13-15 exam_date 1403/4/10 class_number 
+POST logout ?
+POST login ? id 810102999 password blabla
+POST connect ? id 810100001
+PUT my_courses ? id 1
+POST logout ?
+POST login ? id 810100001 password ramtung
+POST course_post ? id 1 title "Homework 6" message "Phase 2" image alialiali
+GET course_channel ? id 1
+GET course_post ? id 1 post_id 1
+POST ta_form ? course_id 1 message "TA for designing project"
+GET personal_page ? id 810100001
+GET post ? id 810100001 post_id 1
+POST logout ?
+POST login ? id 810102999 password blabla
+GET notification ?
+POST ta_request ? professor_id 810100001 form_id 1
+POST logout ?
+POST login ? id 810199999 password idk
+POST ta_request ? professor_id 810100001 form_id 1
+POST logout ?
+POST login ? id 810100001 password ramtung
+GET personal_page ? id 810100001
+POST close_ta_form ? id 1
+accept
+rejecsdvsdvsdv
+reject
+POST logout ?
+POST login ? id 810102999 password blabla
+GET notification ?
+POST logout ?
+POST login ? id 810100001 password ramtung
+GET personal_page ? id 810100001

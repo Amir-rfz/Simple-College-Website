@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>show personal page</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #81daf8;
+    }
+    
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    table {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+    
+    td {
+      padding: 10px;
+    }
+    
+    input[type="text"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      background-color: #81daf8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #6ccbe5;
+    }
+    
+  </style>
+</head>
+<body>
+  <h1>Show Personal Page</h1>
+  <form action="/getPage" method="post">
+    <table>
+      <tr>
+        <td>User ID:</td>
+        <td><input type="text" name="id"></td>
+      </tr>
+    </table>
+    <input type="submit" value="show page">
+  </form>
+</body>
+</html>

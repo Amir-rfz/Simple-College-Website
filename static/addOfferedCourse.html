@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Add new offered course</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+    
+    h1 {
+      color: #81daf8;
+    }
+    
+    form {
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    
+    table {
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+    
+    td {
+      padding: 10px;
+    }
+    
+    input[type="text"] {
+      width: calc(100% - 22px);
+      padding: 10px;
+      margin-bottom: 10px;
+    }
+    
+    input[type="submit"] {
+      background-color: #81daf8;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      padding: 10px 20px;
+      text-transform: uppercase;
+      cursor: pointer;
+    }
+    
+    input[type="submit"]:hover {
+      background-color: #6ccbe5;
+    }
+
+    
+  </style>
+</head>
+<body>
+  <h1>Add new offered course</h1>
+  <form action="/addOfferedCourse" method="post">
+    <table>
+      <tr>
+        <td>course id :</td>
+        <td><input type="text" name="courseId"></td>
+      </tr>
+      <tr>
+        <td>professor id :</td>
+        <td><input type="text" name="professorId"></td>
+      </tr>
+      <tr>
+        <td>capacity :</td>
+        <td><input type="text" name="capacity"></td>
+      </tr>
+      <tr>
+        <td>time :</td>
+        <td><input type="text" name="time"></td>
+      </tr>
+      <tr>
+        <td>exam date :</td>
+        <td><input type="text" name="examDate"></td>
+      </tr>
+      <tr>
+        <td>class number :</td>
+        <td><input type="text" name="classNumber"></td>
+      </tr>
+    </table>
+    <input type="submit" value="add course">
+  </form>
+</body>
+</html>
