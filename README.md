@@ -28,12 +28,10 @@ AP HTTP
 
 1. **Clone the repo**  
    ```bash
-   git clone https://github.com/AP-ECE-UT/APHTTP.git
-   cd APHTTP
-
+   git clone https://github.com/Amir-rfz/Simple-College-Website.git
+   cd Simple-College-Website.git
 
 2. **Make**
-
    ```bash
    make clean
    make
