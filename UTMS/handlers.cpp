@@ -4,6 +4,9 @@
 #include <iostream>
 #include "Error.hpp"
 #include <ctime>
+#include <cstdio>        
+#include <fstream>       
+#include <sys/stat.h>    
 
 LoginHandler::LoginHandler(UTMS* utms)
     : utms(utms) {}
@@ -171,30 +174,38 @@ changeProfileHandler::changeProfileHandler(UTMS* utms)
 
 Response* changeProfileHandler::callback(Request* req) {
 
-    std::time_t t = std::time(0);
-    std::string file = req->getBodyParam("file");
-    std::string imageAddr = "upload/" + to_string(t) + ".png";
-    utils::writeToFile(file, imageAddr);
+    std::string fileData = req->getBodyParam("file");
+    if (fileData.empty()) {
+        
+        return Response::redirect("/Home");
+    }
 
-    try{
+    std::time_t now = std::time(nullptr);
+    const std::string uploadDir = "upload";
+    const std::string imageAddr = uploadDir + "/" + std::to_string(now) + ".png";
+
+    #ifdef _WIN32
+      _mkdir(uploadDir.c_str());
+    #else
+      mkdir(uploadDir.c_str(), 0755);
+    #endif
+
+    std::ofstream out(imageAddr, std::ios::binary);
+    out.write(fileData.data(), fileData.size());
+    out.close();
+
+    try {
         utms->setProfile(imageAddr);
     }
-    catch (Error& error){
-        Response* resp;
-        if(error.show() == "Bad Request"){
-            resp = Response::redirect("/badRequest");
-        }
-        else if(error.show() == "Not Found"){
-            resp = Response::redirect("/notFound");
-        }
-        else{
-            resp = Response::redirect("/permissionDenied");
-        }
-        return resp;
+    catch (Error& error) {
+        if (error.show() == "Bad Request") return Response::redirect("/badRequest");
+        else if (error.show() == "Not Found") return Response::redirect("/notFound");
+        else return Response::redirect("/permissionDenied");
     }
-    Response* res = Response::redirect("/Home");
-    return res;
+
+    return Response::redirect("/Home");
 }
+
 
 deleteProfileHandler::deleteProfileHandler(UTMS* utms)
     : utms(utms) {}
