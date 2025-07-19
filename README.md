@@ -66,7 +66,7 @@ Navigate to `http://localhost:8080/` in your browser to begin.
 
 ![Home Page](images/1.png)
 
-![Profile Page](images/2.png)
+![Profile Page](images/6.png)
 
 ![Blog Page](images/3.png)
 
