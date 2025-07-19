@@ -64,12 +64,13 @@ Navigate to `http://localhost:8080/` in your browser to begin.
 
 ## Preview
 
-*Home page (course catalog):*
-![Home Page](images/home.png)
+![Home Page](images/1.png)
 
-*Profile editing:*
-![Profile Page](images/profile.png)
+![Profile Page](images/2.png)
 
-*Blog dashboard:*
-![Blog Page](images/blog.png)
+![Blog Page](images/3.png)
+
+![Blog Page](images/4.png)
+
+![Blog Page](images/5.png)
 
